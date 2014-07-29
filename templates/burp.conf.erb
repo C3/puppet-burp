@@ -67,7 +67,8 @@ ssl_peer_cn = burpserver
 
 # Example syntax for pre/post scripts
 <%= @backup_script_pre %>
-#backup_script_post=/path/to/a/script
+<%= '#' if scope['burp::backup_script_post'].nil? %>backup_script_post=<%= scope['burp::backup_script_post'] %>
+<%= '#' if scope['burp::backup_script_post_run_on_fail'].nil? %>backup_script_post_run_on_fail=<%= scope['burp::backup_script_post_run_on_fail'] ? 1 : 0 %>
 #restore_script_pre=/path/to/a/script
 #restore_script_post=/path/to/a/script
 

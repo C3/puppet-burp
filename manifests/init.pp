@@ -42,10 +42,12 @@ class burp (
   $ssl_key_password = "password",
 
 # client: settings for /etc/burp/burp.conf
-  $server             = "127.0.0.1",
-  $client_password    = "password",
-  $cname              = $hostname,
-  $server_can_restore = "1",
+  $server                         = "127.0.0.1",
+  $client_password                = "password",
+  $cname                          = $hostname,
+  $server_can_restore             = "1",
+  $backup_script_post             = undef,
+  $backup_script_post_run_on_fail = undef,
 
 # client: create client config files in /etc/clientconfdir for Linux clients
   $includes = "/home",
